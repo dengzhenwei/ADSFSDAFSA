@@ -1,0 +1,17 @@
+package com.jt.order.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.jt.order.mapper.OrderItemMapper;
+import com.jt.order.mapper.OrderMapper;
+import com.jt.order.mapper.OrderShippingMapper;
+
+public class RabbitMQOrderService {
+	@Autowired
+	private OrderMapper orderMapper;
+	@Autowired
+	private OrderItemMapper orderItemMapper;
+	@Autowired
+	private OrderShippingMapper orderShippingMapper;
+	//实现订单入库操作
+}

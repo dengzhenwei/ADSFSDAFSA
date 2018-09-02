@@ -1,0 +1,5 @@
+package com.jt.order.service;
+
+public class RabbitMQOrderService {
+
+}

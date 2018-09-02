@@ -1,0 +1,5 @@
+package com.jt.dubbo.service;
+
+public interface DubboCartService {
+
+}

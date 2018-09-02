@@ -1,0 +1,5 @@
+package com.jt.web.service.impl;
+
+public class UserServiceImpl {
+
+}

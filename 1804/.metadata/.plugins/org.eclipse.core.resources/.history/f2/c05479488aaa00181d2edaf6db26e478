@@ -1,0 +1,11 @@
+package com.jt.dubbo.pojo;
+
+import com.jt.dubbo.pojo.Order;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
+
+public interface OrderMapper {
+  
+
+   
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1535350954990_1" label="jt" name="jt">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/RemoteSystemsTempFiles" type="4"/>
+<item elementID="=jt-cart" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=jt-manage" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=jt-web" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=jt-sso" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/jt-parent" type="4"/>
+<item elementID="=jt-common" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1535351206309_7" label="demo" name="demo">
+<item elementID="=dubbo-provider" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=demo-quartzExpress" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=dubbo-api" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=dubbo-provider2" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=dubbo-consumer" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1535355358102_10" label="dubbo-jt" name="dubbo-jt">
+<item elementID="=dubbo-jt-cart" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/dubbo-jt-parent" type="4"/>
+<item elementID="=dubbo-jt-web" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=dubbo-order" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=dubbo-jt-common" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=dubbo-jt-interface" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1535771364078_7" label="bootcloud" name="bootcloud">
+<item elementID="=sc-cart" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1533862993445_0" label="Window Working Set" name="Aggregate for window 1533862993444"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1535351209122_8" label="Multiple Working Sets" name="Aggregate:demo:jt:">
+<workingSet IMemento.internal.id="demo"/>
+<workingSet IMemento.internal.id="jt"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1535359084087_11" label="Multiple Working Sets" name="Aggregate:demo:dubbo-jt:jt:">
+<workingSet IMemento.internal.id="demo"/>
+<workingSet IMemento.internal.id="dubbo-jt"/>
+<workingSet IMemento.internal.id="jt"/>
+</workingSet>
+<mruList name="jt"/>
+</workingSetManager>

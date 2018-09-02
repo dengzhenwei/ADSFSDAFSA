@@ -1,0 +1,7 @@
+package com.jt.order.service;
+
+import com.jt.dubbo.service.DubboOrderService;
+
+public class OrderServiceImpl implements DubboOrderService{
+
+}

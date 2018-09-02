@@ -1,0 +1,19 @@
+package com.jt.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class SearchController {
+
+	@RequestMapping("/search")
+	public String search(String q){
+		String key=null;
+		try {
+			key=new String(q.getBytes("ISO-8859-1","UTF-8"));
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+}

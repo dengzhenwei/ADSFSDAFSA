@@ -1,0 +1,10 @@
+package com.jt.dubbo.pojo;
+
+import com.jt.dubbo.pojo.TbOrderShipping;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
+
+public interface TbOrderShippingMapper {
+
+   
+}

@@ -1,0 +1,14 @@
+package com.jt.order.service;
+
+import com.jt.dubbo.pojo.Order;
+import com.jt.dubbo.service.DubboOrderService;
+
+public class OrderServiceImpl implements DubboOrderService{
+
+	@Override
+	public String saveOrder(Order order) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

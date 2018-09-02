@@ -1,0 +1,33 @@
+package com.jt.web.service.impl;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jt.common.service.HttpClientService;
+import com.jt.common.vo.SysResult;
+import com.jt.web.pojo.User;
+import com.jt.web.service.UserService;
+@Service
+public class UserServiceImpl implements UserService{
+
+	@Autowired
+	private HttpClientService httpClient;
+	private static ObjectMapper objectMapper=new ObjectMapper();
+	@Override
+	public void saveUser(User user) {
+		String url="http://sso.jt.com/user/register";
+		Map<String,String>params=new HashMap<>();
+		params.put("username", user.getUsername());
+		params.put("password",user.getPassword());
+		params.put("phone", user.getPhone());
+		params.put("email", user.getPhone());//代替邮箱
+		String resultJSON=httpClient.post(url,params);
+		objectMapper.readValue(resultJSON,SysResult.oK());
+		
+	}
+
+}

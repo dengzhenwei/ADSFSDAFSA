@@ -1,0 +1,29 @@
+package com.jt.order.rabbitmq;
+
+
+
+import java.io.IOException;
+
+import org.junit.Before;
+
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
+
+public class TestSimple {
+
+	
+	private Connection connection;
+	@Before
+	public void befor() throws IOException{
+		ConnectionFactory factory=new ConnectionFactory();
+		factory.setHost("192.168.220.139");
+		factory.setPort(5692);
+		factory.setUsername("jtadmin");
+		factory.setPassword("jtadmin");
+		factory.setVirtualHost("/jt");
+		connection=factory.newConnection();
+	}
+	
+	
+	
+}

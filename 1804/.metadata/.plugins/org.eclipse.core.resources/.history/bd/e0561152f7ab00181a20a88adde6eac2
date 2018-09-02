@@ -1,0 +1,6 @@
+package com.jt.order.service;
+
+public class RabbitMQOrderService {
+
+	//实现订单入库操作
+}

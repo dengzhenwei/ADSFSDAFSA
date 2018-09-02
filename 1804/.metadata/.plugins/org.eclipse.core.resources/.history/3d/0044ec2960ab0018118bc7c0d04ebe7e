@@ -1,0 +1,5 @@
+package com.jt.order.rabbitmq;
+
+public class TestSimple {
+
+}

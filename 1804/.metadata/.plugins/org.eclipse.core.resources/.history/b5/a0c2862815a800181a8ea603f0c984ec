@@ -1,0 +1,21 @@
+package com.jt.web.pojo;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.jt.common.po.BasePojo;
+
+
+public class Cart extends BasePojo{
+
+	
+	private Long id;
+	private Long userId;
+	private Long itemId;
+	private String itemTitle;
+	private String itemImage;
+	private Long itemPrice;
+	private Integer num;
+}

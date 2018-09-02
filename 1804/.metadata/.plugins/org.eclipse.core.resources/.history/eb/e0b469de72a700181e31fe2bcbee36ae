@@ -1,0 +1,66 @@
+package com.jt.web.controller;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.alibaba.druid.util.StringUtils;
+import com.jt.common.vo.SysResult;
+import com.jt.web.pojo.User;
+import com.jt.web.service.UserService;
+
+@Controller
+@RequestMapping("/user")
+public class UserController {
+	@Autowired
+	private UserService userService;
+
+	@RequestMapping("/{moduleName}")
+	public String module(@PathVariable String moduleName){
+		return moduleName;
+		
+	}
+	//实现用户注册
+	@RequestMapping("/doRegister")
+	@ResponseBody
+	public SysResult saveUser(User user){
+		try {
+			userService.saveUser(user);
+			return SysResult.oK();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return SysResult.build(201, "用户注册失败");
+	}
+	//实现用户登陆
+		@RequestMapping("/doLogin")
+		@ResponseBody
+		public SysResult findUserByUP(User user,HttpServletResponse response ){
+			try {
+				//获取加密后的秘钥
+				String token = userService.findUserByUP(user);
+				
+				//判断token是否为null
+				if(StringUtils.isEmpty(token)){
+					throw new RuntimeException();
+				}
+				
+				//将token写入客户端Cookie中 4k
+				Cookie cookie = new Cookie("JT_TICKET", token);
+				cookie.setPath("/"); //保存到根目录
+				//cookie.setMaxAge(0); 立即销毁Cookie
+				//cookie.setMaxAge(-1); 会话关闭后 Cookie销毁
+				cookie.setMaxAge(60 * 60 * 24 * 7);//7天免密登录  最大生命周期 单位秒
+				response.addCookie(cookie);
+				return SysResult.oK();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return SysResult.build(201, "登陆失败");
+		}
+}

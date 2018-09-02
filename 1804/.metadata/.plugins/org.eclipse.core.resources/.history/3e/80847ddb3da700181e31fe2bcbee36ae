@@ -1,0 +1,16 @@
+package com.jt.web.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.jt.web.pojo.User;
+import com.jt.web.service.UserService;
+@Service
+public class UserServiceImpl implements UserService{
+
+	@Override
+	public void saveUser(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

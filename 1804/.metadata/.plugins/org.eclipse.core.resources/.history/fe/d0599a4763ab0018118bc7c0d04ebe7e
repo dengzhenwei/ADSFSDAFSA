@@ -1,0 +1,45 @@
+package com.jt.order.rabbitmq;
+
+
+
+import java.io.IOException;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
+
+public class TestSimple {
+
+	
+	private Connection connection;
+	@Before
+	public void befor() throws IOException{
+		ConnectionFactory factory=new ConnectionFactory();
+		factory.setHost("192.168.220.139");
+		factory.setPort(5672);
+		factory.setUsername("jtadmin");
+		factory.setPassword("jtadmin");
+		factory.setVirtualHost("/jt");
+		connection=factory.newConnection();
+	}
+	@Test
+	public void test01(){
+		System.out.println(connection);
+	}
+	
+	/**
+	 * 实现消息的写入
+	 * 步骤：1.定义Channel对象 用来管理队列
+	 * 2.定义消息
+	 * 3.定义队列
+	 * 4.发送消息
+	 */
+	@Test
+	public void provider(){
+		
+	}
+	
+	
+}

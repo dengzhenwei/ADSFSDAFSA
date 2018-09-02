@@ -1,0 +1,33 @@
+package com.jt.manage.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.jt.manage.mapper.ItemCatMapper;
+import com.jt.manage.pojo.ItemCat;
+import com.jt.manage.service.ItemCatService;
+import com.jt.manage.vo.EasyUITree;
+
+public class dsaf implements ItemCatService{
+	@Autowired
+	private ItemCatMapper itemCatMapper;
+	@Override
+	public List<EasyUITree> findItemCatList(Long parentId) {
+		ItemCat itemcat=new ItemCat();
+		itemcat.setParentId(parentId);
+		List<ItemCat>itemcatlist=itemCatMapper.select(itemcat);
+		List<EasyUITree>treelist=new ArrayList<EasyUITree>();
+		for(ItemCat itemcattemp:itemcatlist){
+			EasyUITree easyuitree=new EasyUITree();
+			easyuitree.setId(itemcattemp.getId());
+			easyuitree.setText(itemcattemp.getName());
+			String state=itemcattemp.getIsParent()?"closed":"open";
+			easyuitree.setState(state);
+			treelist.add(easyuitree);
+		}
+		return treelist;
+	}
+
+}

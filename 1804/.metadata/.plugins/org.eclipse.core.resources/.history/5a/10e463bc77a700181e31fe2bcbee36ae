@@ -1,0 +1,20 @@
+package com.jt.cart.pojo;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table("tb_")
+public class Cart {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+	private Long userId;
+	private Long itemId;
+	private String itemTitle;
+	private String itemImage;
+	private Long itemPrice;
+	private Integer num;
+}

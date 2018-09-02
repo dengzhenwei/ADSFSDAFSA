@@ -1,0 +1,27 @@
+package com.jt.web.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.jt.dubbo.pojo.Cart;
+import com.jt.dubbo.service.DubboCartService;
+import com.jt.web.thread.UserThreadLocal;
+
+@Controller
+public class OrderController {
+	@Autowired
+	private DubboCartService cartService;
+
+	@RequestMapping("/create")
+	public String findOrderByUserId(Model model){
+		Long dd=UserThreadLocal.get().getId();
+		//根据用户Id查询购物车数据
+		List<Cart>cartList=cartService.findCartListByUserId(userId);
+		model.addAttribute("carts",cartList);
+		return null;
+	}
+}

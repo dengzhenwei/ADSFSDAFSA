@@ -1,0 +1,16 @@
+package com.jt.manage.service.impl;
+
+import java.util.List;
+
+import com.jt.manage.service.ItemCatService;
+import com.jt.manage.vo.EasyUITree;
+
+public class dsaf implements ItemCatService{
+
+	@Override
+	public List<EasyUITree> findItemCatList(Long parentId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

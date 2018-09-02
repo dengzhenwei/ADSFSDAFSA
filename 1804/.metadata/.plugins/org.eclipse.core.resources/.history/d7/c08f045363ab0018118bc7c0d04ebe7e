@@ -1,0 +1,73 @@
+package com.jt.order.rabbitmq;
+
+
+
+import java.io.IOException;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
+
+public class TestSimple {
+
+	
+	private Connection connection;
+	@Before
+	public void befor() throws IOException{
+		ConnectionFactory factory=new ConnectionFactory();
+		factory.setHost("192.168.220.139");
+		factory.setPort(5672);
+		factory.setUsername("jtadmin");
+		factory.setPassword("jtadmin");
+		factory.setVirtualHost("/jt");
+		connection=factory.newConnection();
+	}
+	@Test
+	public void test01(){
+		System.out.println(connection);
+	}
+	
+	/**
+	 * 实现消息的写入
+	 * 步骤：1.定义Channel对象 用来管理队列
+	 * 2.定义消息
+	 * 3.定义队列
+	 * 4.发送消息
+	 */
+	@Test
+	public void provider(){
+		//定义通道Chneel接口
+				Channel channel = connection.createChannel();
+				
+				//定义队列
+				/**
+				 * queue:队列名称
+				 * durable:是否持久化  true 和false
+				 * exclusive: 如果为true 表示为生产者独有
+				 * autoDelete:当消息消费完成后是否自动删除
+				 * arguments:是否传递参数 一般为空
+				 */
+				channel.queueDeclare("queue_1", false, false, false, null);
+				
+				//定义发送的消息
+				String msg = "我是单工模式";
+				
+				
+				//发送消息
+				/**
+				 * exchange:交换机名称   如果没有交换机 添加""串
+				 * routingKey:路由KEy 信息标识符,没有添加队列名称
+				 * props 携带的参数
+				 * body.传递信息的字节码文件
+				 */
+				channel.basicPublish("", "queue_1",null, msg.getBytes());
+				
+				channel.close();
+				connection.close();
+	}
+	
+	
+}

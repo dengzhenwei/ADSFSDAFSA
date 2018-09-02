@@ -1,0 +1,26 @@
+package com.jt.cart.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.jt.cart.service.CartService;
+
+@Controller
+@RequestMapping("/cart")
+public class CartController {
+
+	@Autowired
+	private CartService cartService;
+	
+	@RequestMapping("/show")
+	//跳转到购物车展现页面
+	public String findCartListByUserId(){
+		Long userId=17L;//暂时写死
+		//根据userId查询购物车列表信息
+		List<Cart>
+		return "cart";
+	}
+}

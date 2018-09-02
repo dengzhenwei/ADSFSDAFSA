@@ -1,0 +1,7 @@
+package com.jt.order.service;
+
+import com.jt.order.mapper.OrderMapper;
+
+public class OrderServiceImpl implements OrderMapper{
+
+}

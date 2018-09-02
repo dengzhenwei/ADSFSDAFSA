@@ -1,0 +1,12 @@
+package com.jt.order.rabbitmq;
+
+import org.aspectj.lang.annotation.Before;
+
+import com.rabbitmq.client.AMQP.Connection;
+
+public class TestSimple {
+
+	@Before
+	public Connection connection;
+	
+}

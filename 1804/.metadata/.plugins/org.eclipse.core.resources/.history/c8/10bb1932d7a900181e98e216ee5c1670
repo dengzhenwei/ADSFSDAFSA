@@ -1,0 +1,15 @@
+package com.jt.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/cart")
+public class CartController {
+
+	//通过Dubbo调用实现购物车列表展示
+	@RequestMapping("/show")
+	public String findCartListByUserId(){
+		return "cart";
+	}
+}

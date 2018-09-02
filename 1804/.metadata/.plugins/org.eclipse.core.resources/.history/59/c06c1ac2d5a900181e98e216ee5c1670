@@ -1,0 +1,33 @@
+package com.jt.cart.service.impl;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jt.cart.mapper.CartMapper;
+import com.jt.cart.pojo.Cart;
+import com.jt.cart.service.CartService;
+import com.jt.common.service.BaseService;
+import com.jt.dubbo.service.DubboCartService;
+@Service
+public class CartServiceImpl implements DubboCartService{
+
+	@Autowired
+	private CartMapper cartMapper;
+
+	@Override
+	public List<com.jt.dubbo.pojo.Cart> findCartListByUserId(Long userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+ 
+	
+	
+
+
+
+	
+}
